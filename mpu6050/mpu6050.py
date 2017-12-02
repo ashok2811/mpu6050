@@ -160,12 +160,12 @@ class mpu6050:
         z = z / accel_scale_modifier
 
         if g is True:
-            return {'x': x, 'y': y, 'z': z}
+            return {x,y,z}
         elif g is False:
             x = x * self.GRAVITIY_MS2
             y = y * self.GRAVITIY_MS2
             z = z * self.GRAVITIY_MS2
-            return {'x': x, 'y': y, 'z': z}
+            return {x,y,z}
 
     def set_gyro_range(self, gyro_range):
         """Sets the range of the gyroscope to range.
@@ -231,7 +231,7 @@ class mpu6050:
         y = y / gyro_scale_modifier
         z = z / gyro_scale_modifier
 
-        return {'x': x, 'y': y, 'z': z}
+        return {x,y,z}
 
     def get_all_data(self):
         """Reads and returns all the available data."""
